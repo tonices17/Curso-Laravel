@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,7 @@ Route::view('/', 'index')->name('index');
 Route::view('/about', 'about')->name('about');
 Route::view('/services', 'services')->name('services');
 Route::view('/contact', '.contact')->name('contact');
+
+Route::resource('/user', UserController::class);
+// El Route::resource sería lo mismo que hacer todas las peticiones una a una
+// Route::get('/user', [UserController::class, 'index'])->name('user');
