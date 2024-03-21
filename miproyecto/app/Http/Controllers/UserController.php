@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('user.index', ['users' => $users]);
+        return view('users.index', ['users' => $users]);
     }
 
     public function create()
@@ -37,13 +37,13 @@ class UserController extends Controller
             "zip_code" => 03241,
         ]);
 
-        return redirect('user');
+        return redirect('users');
     }
 
     public function show($id)
     {
         $user = User::find($id);
 
-        return view('user.show', compact('user'));
+        return view('users.show', compact('user'));
     }
 }
