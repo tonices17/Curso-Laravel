@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateNoteRequest;
 use App\Models\Note;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class NoteController extends Controller
         return view('notes.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(CreateNoteRequest $request): RedirectResponse
     {
         $note = new Note();
 
