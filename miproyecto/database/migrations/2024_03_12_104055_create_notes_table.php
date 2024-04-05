@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             $table->string('description', 255)->nullable();
-            $table->string('author', 255);
+            $table->integer('author_id');
             $table->date('deadline');
             $table->boolean('done')->default(false);
             $table->timestamps();

@@ -25,7 +25,7 @@ class CreateNoteRequest extends FormRequest
             'id' => 'bail|required|integer|unique:notes,id',
             'title' => 'bail|required|string|min:3|max:255|unique:notes,title',
             'description' => 'bail|string|min:3|max:255|nullable',
-            'author' => 'bail|required|string|min:3|max:255',
+            'author' => 'bail|required|integer',
             'deadline' => 'bail|required|date',
             'done' => 'bail|required|boolean',
         ];

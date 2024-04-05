@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateNoteRequest;
+use App\Models\Author;
 use App\Models\Note;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -26,7 +27,9 @@ class NoteController extends Controller
 
     public function create(): View
     {
-        return view('notes.create');
+        $authors = Author::all();
+
+        return view('notes.create', compact('authors'));
     }
 
     public function store(CreateNoteRequest $request): RedirectResponse

@@ -18,7 +18,12 @@
     <p style="color: red">{{ $message }}</p>
     @enderror
     <label for="author">Author</label>
-    <input type="text" name="author" id="author">
+    <select name="author" id="author">
+        <option value="0">¿Quién ha escrito la nota?</option>
+        @foreach ($authors as $author)
+        <option value="{{ $author->id }}">{{ $author->name }}</option>
+        @endforeach
+    </select>
     @error('author')
     <p style="color: red">{{ $message }}</p>
     @enderror

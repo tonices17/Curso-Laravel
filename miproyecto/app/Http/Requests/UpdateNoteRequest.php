@@ -24,7 +24,7 @@ class UpdateNoteRequest extends FormRequest
         return [
             'title' => 'bail|required|string|max:255|unique:notes,title',
             'description' => 'bail|required|string|max:255|nullable',
-            'author' => 'bail|required|string|max:255',
+            'author' => 'bail|required|integer',
             'deadline' => 'bail|required|date',
             'done' => 'bail|required|boolean',
         ];
